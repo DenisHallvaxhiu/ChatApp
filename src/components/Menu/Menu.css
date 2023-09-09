@@ -1,0 +1,52 @@
+.left > *{
+    padding: 20px;
+}
+.profile{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    color: #ece4f2;
+}
+
+.icons{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.icons > img{
+    width: 35px;
+    height: 35px;
+}
+.icons > img:nth-child(3){
+    width: 40px;
+    height: 40px;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.input > input{
+    height: 45px;
+    flex: 1;
+    padding-left: 15px;
+    border-radius: 20px;
+    border: none;
+}
+.input > button{
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .input > button > img{
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+} */

@@ -1,0 +1,20 @@
+.screen{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    flex: 0 25%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, rgba(95, 21, 149,1), rgba(98, 31, 145, 0.75));
+}
+.right{
+    flex: 1;
+    height: 100vh;
+    background-color: #f3f4f9;
+}
+::placeholder {
+    font-weight: bold;
+  }
