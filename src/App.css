@@ -3,15 +3,19 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .left{
-    flex: 0 25%;
+    flex: 0 0 25%;
+    max-width: 25vw;
     height: 100vh;
     background-image: linear-gradient(to bottom right, rgba(95, 21, 149,1), rgba(98, 31, 145, 0.75));
 }
 .right{
-    flex: 1;
+    flex: 1 0;
     height: 100vh;
     background-color: #f3f4f9;
 }

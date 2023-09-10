@@ -2,6 +2,107 @@ import React from "react";
 import "./Menu.css";
 
 export default function Menu() {
+  const messages = [
+    {
+      name: "Denzel Washington",
+      image: "https://www.randomlists.com/img/people/denzel_washington.webp",
+      lastMsg:
+        "asdfhjbasdhasdddddddddddddddddddddddddddddddddddjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Leonardo DiCaprio",
+      image: "https://www.randomlists.com/img/people/leonardo_dicaprio.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: false,
+    },
+    {
+      name: "Eminem",
+      image: "https://www.randomlists.com/img/people/eminem.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: false,
+    },
+    {
+      name: "Morgan Freeman",
+      image: "https://www.randomlists.com/img/people/morgan_freeman.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Taylor Swift",
+      image: "https://www.randomlists.com/img/people/taylor_swift.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Jennifer Lopez",
+      image: "https://www.randomlists.com/img/people/jennifer_lopez.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: false,
+    },
+    {
+      name: "Cameron Diaz",
+      image: "https://www.randomlists.com/img/people/cameron_diaz.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Jeniffer Aniston",
+      image: "https://www.randomlists.com/img/people/jennifer_aniston.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Denzel Washington",
+      image: "https://www.randomlists.com/img/people/denzel_washington.webp",
+      lastMsg:
+        "asdfhjbasdhasdddddddddddddddddddddddddddddddddddjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Leonardo DiCaprio",
+      image: "https://www.randomlists.com/img/people/leonardo_dicaprio.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: false,
+    },
+    {
+      name: "Eminem",
+      image: "https://www.randomlists.com/img/people/eminem.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: false,
+    },
+    {
+      name: "Morgan Freeman",
+      image: "https://www.randomlists.com/img/people/morgan_freeman.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Taylor Swift",
+      image: "https://www.randomlists.com/img/people/taylor_swift.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Jennifer Lopez",
+      image: "https://www.randomlists.com/img/people/jennifer_lopez.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: false,
+    },
+    {
+      name: "Cameron Diaz",
+      image: "https://www.randomlists.com/img/people/cameron_diaz.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+    {
+      name: "Jeniffer Aniston",
+      image: "https://www.randomlists.com/img/people/jennifer_aniston.webp",
+      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
+      seen: true,
+    },
+  ];
+
   return (
     <>
       <div className="profile">
@@ -19,7 +120,20 @@ export default function Menu() {
       </div>
       <div className="input">
         <input type="text" name="" id="" placeholder="Start new conversation" />
-        <button><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO1ZvW4TQRBeQaCgJFDx8xIRUVK5Q5F20MwVJxD0vAIojbuEPkROxBsY3YzkAA0FzwCCB4CkIj91jgY0Z8cSVpD3btd3e+g+aSVLJ9vfNzuz+82cMR06dPBGOkyvAtO6FdwEwcwyfQOmMxD8VSymM8v0tXgmuPkoS9b6/f4V0zRQ8B4wvQKmIxD6XW7hoRXc3siSu7UT3ximt0Fo3wrm5Yn/vaxgbgUHMIJbtZAHwacgeOpL/BIhJzZLniyM+Mr+82uW6U1o4jArhGlP/ysoeRjBDSv4YdHk4WIxvdf/DBf5OsnLVMTHdJhe9xZQR9rAv+ti4Ec+S541RR6mCx9XIk9My5bpOAIBp5WOWD3nmydP41Ri2i1FXm9H30tqFp61kMMI7rtHX+2BZ9RCCoCxiG0n8mqy1KfEJgCYjtQ0ukR/PUTeBhcgRS2szhUwtsRxCgCmly47wBELeDt/B4rGI1oBX+bvQAmrHArgXgPHLjWQxyoAmM7/fwHQ+hTithcxt/0YlXgvMiv4Yq4AHTrFKgCy5IGTmbNMP2ITYJm+O0/z1LrGJgAEt0xbGxpgOrcH9o6zgMkuDILkbZCFO6YsHg7TmzE09VbwpPLcVGeVjQvgJK1EfiqCaa/B6L82vtA+1DJJA3n/rvept2RCQAetxcC1vsgfBBvuzgx5B3WkTS9U5C+DzioXczrhT++CLTk33dULxps462/gjh7bpm7o7ai2o4p3Gn8Ht0rfsIvAxACu6txGPbs2HtrZTV7g5cVnps/6TC2xusooXrN26GDajz+jYGvHi7pQwQAAAABJRU5ErkJggg=="/></button>
+        <button>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO1ZvW4TQRBeQaCgJFDx8xIRUVK5Q5F20MwVJxD0vAIojbuEPkROxBsY3YzkAA0FzwCCB4CkIj91jgY0Z8cSVpD3btd3e+g+aSVLJ9vfNzuz+82cMR06dPBGOkyvAtO6FdwEwcwyfQOmMxD8VSymM8v0tXgmuPkoS9b6/f4V0zRQ8B4wvQKmIxD6XW7hoRXc3siSu7UT3ximt0Fo3wrm5Yn/vaxgbgUHMIJbtZAHwacgeOpL/BIhJzZLniyM+Mr+82uW6U1o4jArhGlP/ysoeRjBDSv4YdHk4WIxvdf/DBf5OsnLVMTHdJhe9xZQR9rAv+ti4Ec+S541RR6mCx9XIk9My5bpOAIBp5WOWD3nmydP41Ri2i1FXm9H30tqFp61kMMI7rtHX+2BZ9RCCoCxiG0n8mqy1KfEJgCYjtQ0ukR/PUTeBhcgRS2szhUwtsRxCgCmly47wBELeDt/B4rGI1oBX+bvQAmrHArgXgPHLjWQxyoAmM7/fwHQ+hTithcxt/0YlXgvMiv4Yq4AHTrFKgCy5IGTmbNMP2ITYJm+O0/z1LrGJgAEt0xbGxpgOrcH9o6zgMkuDILkbZCFO6YsHg7TmzE09VbwpPLcVGeVjQvgJK1EfiqCaa/B6L82vtA+1DJJA3n/rvept2RCQAetxcC1vsgfBBvuzgx5B3WkTS9U5C+DzioXczrhT++CLTk33dULxps462/gjh7bpm7o7ai2o4p3Gn8Ht0rfsIvAxACu6txGPbs2HtrZTV7g5cVnps/6TC2xusooXrN26GDajz+jYGvHi7pQwQAAAABJRU5ErkJggg==" />
+        </button>
+      </div>
+      <div className="inbox">
+        {messages.map((inbox, index) => (
+          <div className={`inboxItem ${inbox.seen ? "seen" : ""}`}>
+            <img src={inbox.image} alt="" />
+            <div className="info">
+              <h3>{inbox.name}</h3>
+              <p>{inbox.lastMsg}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
