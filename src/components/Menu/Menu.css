@@ -1,6 +1,6 @@
 .left > *{
-    padding: 20px;
-    height: 100px;
+    padding: 10px 20px;
+    height: 80px;
 }
 
 .profile{
@@ -46,6 +46,13 @@
     justify-content: center;
     align-items: center;
 }
+.input > button > img{
+    border-radius: 50%;
+}
+.input > button:hover > img{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
 
 .inbox::-webkit-scrollbar{
     width: 5px;
@@ -59,7 +66,7 @@
 }
 .inbox{
     width: 100%;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 240px);
     overflow-y: scroll;
     padding: 5px 20px;
 }

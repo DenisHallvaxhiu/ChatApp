@@ -1,107 +1,8 @@
 import React from "react";
 import "./Menu.css";
 
-export default function Menu() {
-  const messages = [
-    {
-      name: "Denzel Washington",
-      image: "https://www.randomlists.com/img/people/denzel_washington.webp",
-      lastMsg:
-        "asdfhjbasdhasdddddddddddddddddddddddddddddddddddjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Leonardo DiCaprio",
-      image: "https://www.randomlists.com/img/people/leonardo_dicaprio.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: false,
-    },
-    {
-      name: "Eminem",
-      image: "https://www.randomlists.com/img/people/eminem.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: false,
-    },
-    {
-      name: "Morgan Freeman",
-      image: "https://www.randomlists.com/img/people/morgan_freeman.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Taylor Swift",
-      image: "https://www.randomlists.com/img/people/taylor_swift.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Jennifer Lopez",
-      image: "https://www.randomlists.com/img/people/jennifer_lopez.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: false,
-    },
-    {
-      name: "Cameron Diaz",
-      image: "https://www.randomlists.com/img/people/cameron_diaz.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Jeniffer Aniston",
-      image: "https://www.randomlists.com/img/people/jennifer_aniston.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Denzel Washington",
-      image: "https://www.randomlists.com/img/people/denzel_washington.webp",
-      lastMsg:
-        "asdfhjbasdhasdddddddddddddddddddddddddddddddddddjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Leonardo DiCaprio",
-      image: "https://www.randomlists.com/img/people/leonardo_dicaprio.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: false,
-    },
-    {
-      name: "Eminem",
-      image: "https://www.randomlists.com/img/people/eminem.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: false,
-    },
-    {
-      name: "Morgan Freeman",
-      image: "https://www.randomlists.com/img/people/morgan_freeman.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Taylor Swift",
-      image: "https://www.randomlists.com/img/people/taylor_swift.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Jennifer Lopez",
-      image: "https://www.randomlists.com/img/people/jennifer_lopez.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: false,
-    },
-    {
-      name: "Cameron Diaz",
-      image: "https://www.randomlists.com/img/people/cameron_diaz.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-    {
-      name: "Jeniffer Aniston",
-      image: "https://www.randomlists.com/img/people/jennifer_aniston.webp",
-      lastMsg: "asdfhjbasdhjfvasdfvasdfuvsadufasvdfhasdo",
-      seen: true,
-    },
-  ];
+export default function Menu(props) {
+  const messages = props.users
 
   return (
     <>
@@ -126,7 +27,7 @@ export default function Menu() {
       </div>
       <div className="inbox">
         {messages.map((inbox, index) => (
-          <div className={`inboxItem ${inbox.seen ? "seen" : ""}`}>
+          <div onClick={()=>{props.selectUser(index)}} className={`inboxItem ${inbox.seen ? "seen" : ""}`} key={index}>
             <img src={inbox.image} alt="" />
             <div className="info">
               <h3>{inbox.name}</h3>

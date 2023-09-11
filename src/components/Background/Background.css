@@ -1,0 +1,10 @@
+.background{
+    width: 100%;
+    height: calc( 100vh - 75px );
+    background-image: linear-gradient(to right bottom, #e4daeb, #f7edff);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    padding: 20px;
+    margin-bottom: auto;
+}
