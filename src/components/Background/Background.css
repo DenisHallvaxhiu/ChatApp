@@ -1,10 +1,47 @@
 .background{
     width: 100%;
     height: calc( 100vh - 75px );
-    background-image: linear-gradient(to right bottom, #e4daeb, #f7edff);
+    background-image: linear-gradient(to right bottom, #e4daeb, #e0baff);
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-start;
     padding: 20px;
     margin-bottom: auto;
+    overflow-y: scroll;
+}
+.background::-webkit-scrollbar{
+    width: 5px;
+    background-color: lightgray;
+}
+.background::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 20px;
+}
+.background > input{
+    min-height: 50px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.background > div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.background > .sent{
+    justify-content: flex-start;
+}
+.background > .sender{
+    justify-content: flex-end;
+}
+.background > div > p{
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px rgb(232, 232, 232) solid;
+    width: 50%;
+}
+.background > .sender > p{
+    background-color: #badcb3;
+}
+.background > .sent > p{
+    background-color: #fdfdfc;
 }

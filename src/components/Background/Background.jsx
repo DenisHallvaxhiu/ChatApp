@@ -1,15 +1,87 @@
-import React from 'react'
-import "./Background.css"
+import "./Background.css";
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
+import io from "socket.io-client";
+const socket = io.connect("http://localhost:3001/");
 
-export default function Background() {
+export default function Background({ selected }) {
+  Background.propTypes = {
+    selected: PropTypes.object,
+  };
+  const [chatMessage, setChatMessage] = useState([]);
+  const [message, setMessage] = useState("");
+
+  const selecteStyle = {
+    height: "100vh",
+    display: "none",
+  };
+
+  const sendMessage = (message) => {
+    socket.emit("send_msg", {
+      message: message,
+    });
+  };
+
+  useEffect(() => {
+    socket.on("receive_msg", (data) => {
+      setChatMessage((chatMessage) => [
+        ...chatMessage,
+        { message: data.message, sender: false },
+      ]);
+    });
+
+    return () => {
+      socket.off("receive_msg");
+    };
+  }, [socket]);
+
+  const keyDownEvent = (event) => {
+    if (message !== "") {
+      console.log("123");
+      if (event.key === "Enter") {
+        setChatMessage((chatMessage) => [
+          ...chatMessage,
+          { message: message, sender: true },
+        ]);
+        sendMessage(message);
+        setMessage("");
+      }
+    }
+  };
+
+  const handleChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const style = selected ? {} : selecteStyle;
   return (
-    <div className='background'>
-        <input type="text" name="" id="" placeholder='Write a message' />
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, doloribus?</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, ducimus obcaecati, libero sit quas explicabo mollitia voluptates quasi quaerat ea doloremque iusto fugiat officiis sequi ex aspernatur nulla laudantium repellendus accusantium excepturi molestias esse, voluptatibus inventore quisquam. Provident, molestiae consectetur error voluptatum ea quo pariatur alias dicta consequatur optio praesentium!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, vitae?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quos hic iure odit perspiciatis est provident inventore quas rerum! Fugit a quibusdam sequi aspernatur quo, quas numquam animi error omnis.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, dignissimos debitis. Et voluptatum aperiam tenetur veniam eaque perspiciatis, ratione magni. Ab eius obcaecati eum? Soluta non cumque veniam sunt voluptatibus.</p>
+    <div className="background" style={style}>
+      <input
+        onKeyDown={keyDownEvent}
+        onChange={handleChange}
+        value={message}
+        type="text"
+        name=""
+        id=""
+        placeholder="Write a message"
+      />
+      <div className="sent">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+          doloribus?
+        </p>
+      </div>
+      <div className="sender">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
+          ducimus obcaecati, libero sit quas explicabo mollitia voluptates quasi
+        </p>
+      </div>
+      {chatMessage.map((context, index) => (
+        <div key={index} className={context.sender ? "sender" : "sent"}>
+          <p>{context.message}</p>
+        </div>
+      ))}
     </div>
-  )
+  );
 }

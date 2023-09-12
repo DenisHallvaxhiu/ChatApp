@@ -128,7 +128,7 @@ function App() {
         ) : (
           <>
             <Header user={selectedUser} />
-            <Background />
+            <Background selected={selectedUser}/>
           </>
         )}
       </div>

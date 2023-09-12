@@ -1,13 +1,17 @@
 import "./Header.css";
+import PropTypes from "prop-types"
 
-import React from "react";
+export default function Header({user}) {
 
-export default function Header(props) {
+  Header.propTypes = {
+    user: PropTypes.object.isRequired
+  }
+
   return (
     <header>
-      <img src={props.user.image} alt="" />
+      <img src={user.image} alt="" />
       <div>
-        <h4>{props.user.name}</h4>
+        <h4>{user.name}</h4>
         <span>online</span>
       </div>
     </header>
