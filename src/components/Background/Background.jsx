@@ -65,18 +65,6 @@ export default function Background({ selected }) {
         id=""
         placeholder="Write a message"
       />
-      <div className="sent">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
-          doloribus?
-        </p>
-      </div>
-      <div className="sender">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
-          ducimus obcaecati, libero sit quas explicabo mollitia voluptates quasi
-        </p>
-      </div>
       {chatMessage.map((context, index) => (
         <div key={index} className={context.sender ? "sender" : "sent"}>
           <p>{context.message}</p>
